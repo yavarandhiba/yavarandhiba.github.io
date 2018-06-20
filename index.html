@@ -10,12 +10,10 @@
   <title>Yavar and Hiba</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <!--link rel="stylesheet" href="assets/sakuraPetals/jquery-sakura.min.css"-->
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <!--link rel="stylesheet" href="assets/animatecss/animate.min.css"-->
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
@@ -24,13 +22,7 @@
   
   <style>
 
-    #groom {
-      background-color: black;
-    } 
 	#with {
-      background-color: black;
-    }
-	#bride {
       background-color: black;
     }
 	
@@ -38,8 +30,6 @@
 		font-family: 'Game of Thrones';
 		src: url('assets/font/got.ttf');
 	}
-	
-	h1, h2, h3 { font-family: 'Game of Thrones', 'Georgia', serif; }
 	
 	#mask {
 		border-radius: 50%;
@@ -68,8 +58,26 @@
 
 
 </head>
-<body>
-<div id="snow">
+<body id="snow" onload="check()">
+
+
+  <section  style = "padding-top: 25px " class="cid-qIia8mgjVjkkk mbr-fullscreen mbr-parallax-background" id="header2-0 with">
+	
+	<div  class="container align-center">
+				<h1 style = " padding-bottom: 200px " class="mbr-white mbr-section-title mbr-bold pb-3 mbr-fonts-style">
+	<div >
+			The Hand of King is Commanded by God to Request the Presence of King <span id="king"></span> and His Consort Queen <span id="queen"></span> to Witness a Royal Ceremony</h1>
+	</div>
+	
+	</div>
+	
+	    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>
+
   <section  style = "padding-top: 25px " class="cid-qIia8mgjVj mbr-fullscreen mbr-parallax-background" id="header2-0">
 	
 	<div  class="container align-center">
@@ -86,14 +94,9 @@
 	
 	</div>
 	
-    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
-        <a href="#next">
-            <i class="mbri-down mbr-iconfont"></i>
-        </a>
-    </div>
 </section>
 
-  <section id ="groom" class=" align-center mbr-section content4 cid-qIieWoha50" id="content4-2">
+  <section id ="with" class=" align-center mbr-section content4 cid-qIieWoha50" id="content4-2">
 
     <div class="container">
         <div class="media-container-row">
@@ -126,7 +129,7 @@
 </div>
 </section>
 
-<section id = "bride" class="mbr-section content4 cid-qIifwA2R02" id="content4-4">
+<section id = "with" class="mbr-section content4 cid-qIifwA2R02" id="content4-4">
 
     <div class="container">
         <div class="media-container-row">
@@ -240,14 +243,12 @@
 							<source src="assets/audio/brave.mp3" >
 							Your browser does not support the audio element.
 						</audio-->
-                    </div>
+						
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-</div>
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
@@ -255,7 +256,6 @@
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <!--script src="assets/sakuraPetals/jquery-sakura.min.js"></script-->
   <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
   <script src="assets/sociallikes/social-likes.js"></script>
   <script src="assets/parallax/jarallax.min.js"></script>
@@ -272,12 +272,6 @@
 
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
     <input name="animation" type="hidden">
-
-    <!--script>
-    $(window).load(function () {
-      $('body').sakura();
-    });
-  </script-->
   
   <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -287,8 +281,24 @@
                     v: 0.8
                 });
             });
-        </script>
-  
-
+   </script>
+		
+   <script>
+		function getQueryStringValue (key) {  
+			return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+		}  
+		//console.log(getQueryStringValue("name")); 
+   </script> 
+   <script>
+	function check() {
+		var map = new Object();
+			map["ranjith"] = { King : "Ranjith", Queen : "Iman" };
+			map["yavar"] = { King : "Yavar", Queen : "Hiba" };
+			var queryparam = getQueryStringValue("name");
+			var value = map[queryparam];
+			document.getElementById("king").innerHTML = value.King;
+			document.getElementById("queen").innerHTML = value.Queen;
+		}
+   </script>
   </body>
 </html>

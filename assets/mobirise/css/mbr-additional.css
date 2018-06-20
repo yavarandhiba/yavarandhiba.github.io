@@ -1373,6 +1373,11 @@ body {
 .dropup .dropdown-toggle::after {
   display: none;
 }
+
+.cid-qIia8mgjVjkkk {
+  background-image: url("../../../assets/images/black.jpg");
+}
+
 .cid-qIia8mgjVj {
   background-image: url("../../../assets/images/mbr-1-1620x1080.jpg");
 }
