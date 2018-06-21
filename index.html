@@ -89,7 +89,7 @@
 
 	<div  class="container align-center">
 				<h1 style = " padding-bottom: 200px " class="mbr-white mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2">
-			<div>The Hand of King is Commanded By God to Request The Presence of</div><div> King <span id="king"></span> & Queen <span id="queen"></span></div><div>Accompanied by Your Honorable Family</div><div> to Witness a Royal Ceremony.</div></h1>
+			<div>The Hand of King is Commanded By God to Request The Presence of</div><div><span id="king"></span><span id="queen"><span id="knight"></span> <span id="baron"></span></div><div>Accompanied by Your Honorable Family</div><div> to Witness a Royal Ceremony.</div></h1>
 			<div><img style = "height: 300px; width:300px" src="assets/images/hog.png" alt="" title=""></div>
 
 	</div>
@@ -292,12 +292,25 @@
    <script>
 	function check() {
 		var map = new Object();
-			map["ranjith"] = { King : "Ranjith", Queen : "Iman" };
-			map["roger"] = { King : "Roger", Queen : "Mirka" };
+			map["ranjith"] = { King : "King Ranjith &", Queen : "Queen Iman" };
+			map["roger"] = { King : "King Roger &", Queen : "Queen Mirka" };
+			map["rafael"] = {Knight : "Knight Rafael"};
+			map["jennifer"] = {Baron : "Baroness Jennifer"};
 			var queryparam = getQueryStringValue("name");
 			var value = map[queryparam];
-			document.getElementById("king").innerHTML = value.King;
-			document.getElementById("queen").innerHTML = value.Queen;
+			if (value.King != null)
+			{
+				document.getElementById("king").innerHTML = value.King;
+				document.getElementById("queen").innerHTML = value.Queen;
+			}
+			if (value.Knight != null)
+			{
+				document.getElementById("knight").innerHTML = value.Knight;
+			}
+			if (value.Baron != null)
+			{
+				document.getElementById("baron").innerHTML = value.Baron;
+			}
 		}
    </script>
   </body>
