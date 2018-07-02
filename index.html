@@ -26,6 +26,10 @@
       background-color: black;
     }
 	
+	body {
+		background-color: black;
+	}
+	
 	@font-face {
 		font-family: 'Game of Thrones';
 		src: url('assets/font/got.ttf');
@@ -58,7 +62,7 @@
 
 
 </head>
-<body id="snow" onload="check()">
+<body id="snow" class = "with" onload="check()">
 
   <section  style = "padding-top: 25px " class="cid-qIia8mgjVj mbr-fullscreen mbr-parallax-background" id="header2-0">
 	
@@ -89,7 +93,7 @@
 
 	<div  class="container align-center">
 				<h1 style = " padding-bottom: 200px " class="mbr-white mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2">
-			<div>The Hand of King is Commanded By God to Request The Presence of</div><div><span id="king"></span><span id="queen"><span id="knight"></span> <span id="baron"></span></div><div>Accompanied by Your Honorable Family</div><div> to Witness a Royal Ceremony.</div></h1>
+			<div>The Hand of King is Commanded By God to Request The Presence of</div><div><span id="king"></span><span id="queen"><span id="prince"></span> <span id="princess"></span></div><div>Accompanied by Your Honorable Family</div><div> to Witness a Royal Ceremony.</div></h1>
 			<div><img style = "height: 300px; width:300px" src="assets/images/hog.png" alt="" title=""></div>
 
 	</div>
@@ -244,6 +248,36 @@
 							Your browser does not support the audio element.
 						</audio-->
 						
+						<br><br>
+						 <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="example@email.net"
+							action="https://script.google.com/macros/s/AKfycbx33unUT5EW86tsuzcReg6U3WUVRJQPqGGQlbhe/exec">
+							
+							<div style = "font-family: Game of Thrones; color: white" class="form-group ">
+								<label for="exampleInputEmail1">Send &nbsp; us &nbsp; a &nbsp; message &nbsp; through &nbsp; the &nbsp; sight<br> The &nbsp; three &nbsp; eyed &nbsp; raven &nbsp; will &nbsp; deliver &nbsp; it &nbsp; to &nbsp; us</label>
+							</div>
+
+							<div style="display:none; " class="form-group">
+								<label for="name">Name: </label>
+								<input class="form-control" id="name" name="name" value="" />
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us"></textarea>
+							</div>
+
+							<div class="mbr-figure" style="width: 40%;">
+								<img src="assets/images/three.jpg" alt="Mobirise" title="">
+							</div>
+							<br>
+							<button style = "font-family: Game of Thrones;"  class="btn btn-light button-success">
+							Send</button>
+						</form>
+							
+						<div style="display:none; " id="thankyou_message" class="align-center">
+									<h5 style = "font-family: Game of Thrones; color: white">
+									Thanks &nbsp; for &nbsp; your &nbsp; message &nbsp; <br> <br>the &nbsp; honor &nbsp; of &nbsp; your &nbsp; presence <br> <br> &nbsp; is &nbsp; expected &nbsp; at &nbsp; the &nbsp; wedding</h5>
+						</div>
+						
                 </div>
             </div>
         </div>
@@ -251,6 +285,7 @@
 </section>
 
 
+  <script type="text/javascript" src="assets/js/form-submission-handler.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
@@ -294,8 +329,8 @@
 		var map = new Object();
 			map["ranjith"] = { King : "King Ranjith &", Queen : "Queen Iman" };
 			map["roger"] = { King : "King Roger &", Queen : "Queen Mirka" };
-			map["rafael"] = {Knight : "Knight Rafael"};
-			map["jennifer"] = {Baron : "Baroness Jennifer"};
+			map["rafael"] = {Prince : "Prince Rafael"};
+			map["jennifer"] = {Princess : "Princess Jennifer"};
 			var queryparam = getQueryStringValue("name");
 			var value = map[queryparam];
 			if (value.King != null)
@@ -303,13 +338,13 @@
 				document.getElementById("king").innerHTML = value.King;
 				document.getElementById("queen").innerHTML = value.Queen;
 			}
-			if (value.Knight != null)
+			if (value.Prince != null)
 			{
-				document.getElementById("knight").innerHTML = value.Knight;
+				document.getElementById("prince").innerHTML = value.Prince;
 			}
-			if (value.Baron != null)
+			if (value.Princess != null)
 			{
-				document.getElementById("baron").innerHTML = value.Baron;
+				document.getElementById("princess").innerHTML = value.Princess;
 			}
 		}
    </script>
