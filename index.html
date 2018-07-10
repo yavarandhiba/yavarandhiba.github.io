@@ -22,6 +22,8 @@
   
   <style>
 
+	.black-background {background-color:#000000;}
+	
 	#with {
       background-color: black;
     }
@@ -57,6 +59,11 @@
 	height:100%;
 	}
 	
+	.button{
+                background: url(assets/images/wax.jpg) no-repeat;
+                cursor:pointer;
+                border: none;
+            }
 
     </style>
 
@@ -92,8 +99,10 @@
 	
 
 	<div  class="container align-center">
-				<h1 style = " padding-bottom: 200px " class="mbr-white mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2">
-			<div>The Hand of King is Commanded By God to Request <span id="the"></span> Presence <span id="of"></span> </div><div><span id="king"> </span><span id="queen"><span id="prince"></span> <span id="princess"></span></div><div>Accompanied by <span id="your"></span> Honorable Family</div><div> to Witness a Royal Ceremony.</div></h1>
+				<!--h1 style = " padding-bottom: 200px " class="mbr-white mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2">
+			<div>The Hand of King is Commanded By God to Request <span id="the"></span> Presence <span id="of"></span> </div><div><span id="king"> </span><span id="queen"><span id="prince"></span> <span id="princess"></span></div><div>Accompanied by <span id="your"></span> Honorable Family</div><div> to Witness a Royal Ceremony.</div></h1-->
+			<h1 style = " padding-bottom: 200px " class="mbr-white mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2">
+			<div><div><span id="king"> </span><span id="queen"><span id="prince"></span> <span id="princess"></span>,</div> The Hand of King is commanded by God to request the pleasure of your presence accompanied by your Honorable Family</div><div> to witness a Royal Wedding.</div></h1>
 			<div><img style = "height: 300px; width:300px" src="assets/images/hog.png" alt="" title=""></div>
 
 	</div>
@@ -276,13 +285,14 @@
 								the &nbsp; three &nbsp; eyed &nbsp; raven &nbsp; will &nbsp; deliver &nbsp; it &nbsp; to &nbsp; us
 							</div>
 							<br>
-							<button style = "font-family: Game of Thrones;"  class="btn btn-light button-success">
-							Send</button>
+							<button style = "font-family: Game of Thrones;"  class="btn btn-dark black-background  button-success">
+							<img src="assets/images/untitled.png" width="100" /> &nbsp; Send
+							</button>
 						</form>
 							
 						<div style="display:none; " id="thankyou_message" class="align-center">
-									<h5 style = "font-family: Game of Thrones; color: white">
-									Thanks &nbsp; for &nbsp; your &nbsp; message &nbsp; <br> <br>the &nbsp; honor &nbsp; of &nbsp; your &nbsp; presence <br> <br> &nbsp; is &nbsp; expected &nbsp; at &nbsp; the &nbsp; wedding</h5>
+									<h5 style = "font-family: 'Tangerine', handwriting; color: white; font-size: 4rem;">
+									Thanks for your message <br>the honor of your presence <br> is expected at the wedding</h5>
 						</div>
 						
                 </div>
@@ -334,21 +344,18 @@
    <script>
 	function check() {
 		var map = new Object();
-			map["ranjith"] = { King : "King Ranjith &", Queen : "Queen Iman" };
-			map["roger"] = { King : "King Roger &", Queen : "Queen Mirka" };
-			map["rafael"] = {Prince : "Prince Rafael"};
-			map["jennifer"] = {Princess : "Princess Jennifer"};
+			map["ranjith"] = { King : "Ranjith &", Queen : " Iman" };
+			map["roger"] = { King : "Roger &", Queen : " Mirka" };
+			map["rafael"] = {Prince : "Rafael"};
+			map["jennifer"] = {Princess : "Jennifer"};
 			var queryparam = getQueryStringValue("name");
 			var value = map[queryparam];
 			if( queryparam != "") 
 			{
-				document.getElementById("the").innerHTML = "the";
-				document.getElementById("of").innerHTML = "of";
 				
 				if( value == null)
 				{
-					document.getElementById("king").innerHTML = "Noble "+queryparam;
-					document.getElementById("your").innerHTML = "Your";
+					document.getElementById("king").innerHTML = queryparam;
 				}
 				else
 				{
@@ -356,24 +363,16 @@
 					{
 						document.getElementById("king").innerHTML = value.King;
 						document.getElementById("queen").innerHTML = value.Queen;
-						document.getElementById("your").innerHTML = "His";
 					}
 					else if (value.Prince != null)
 					{
 						document.getElementById("prince").innerHTML = value.Prince;
-						document.getElementById("your").innerHTML = "His";
 					}
 					else if (value.Princess != null)
 					{
 						document.getElementById("princess").innerHTML = value.Princess;
-						document.getElementById("your").innerHTML = "Her";
 					}
 				}
-			}
-			else
-			{
-				document.getElementById("the").innerHTML = "Your";
-				document.getElementById("your").innerHTML = "Your";
 			}
 			
 			document.getElementById('name').value = queryparam;
